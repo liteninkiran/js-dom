@@ -182,10 +182,10 @@
     /*-----------------------------------
     --   Traversing The DOM            --
     -----------------------------------*/
-
+/*
     // Get the element called "items" (it is the UL)
     var itemList = document.querySelector('#items');
-/*
+
     // Find the parent (the "main" DIV)
     var parent = itemList.parentNode;
 
@@ -278,3 +278,142 @@
 
     newDiv.style.fontSize = '30px';
 */
+    /*-----------------------------------
+    --   Events                        --
+    -----------------------------------*/
+/*
+    // Find element called "button" and store in variable
+    var button = document.getElementById('button');
+
+    // Add an Event Listener using explicit function definition
+    button.addEventListener('click',
+        function()
+        {
+            alert('Changed');
+        });
+
+    // Add an Event Listener using named function
+    button.addEventListener('click', buttonClick);
+
+    function buttonClick(e)
+    {
+
+        document.getElementById('header-title').textContent = 'Changed';
+        document.querySelector('#main').style.backgroundColor = '#f4f4f4'
+
+        // Event object
+        console.log(e);
+
+        // The element that the event was fired from
+        console.log(e.target);
+        console.log(e.target.id);
+        console.log(e.target.className);
+        console.log(e.target.classList);
+
+        var output = document.getElementById('output');
+        output.innerHTML = '<h3>' + e.target.id + '</h3>';
+
+        // Event type (i.e. click, mouse-up, etc)
+        console.log(e.type);
+
+        // Mouse position from window
+        console.log(e.clientX);
+        console.log(e.clientY);
+
+        // Mouse position from element
+        console.log(e.offsetX);
+        console.log(e.offsetY);
+
+        // Key press (returns True/False)
+        console.log(e.altKey);
+        console.log(e.ctrlKey);
+        console.log(e.shiftKey);
+
+    }
+
+    // Get the "output" Div
+    var output = document.getElementById('output');
+
+    // Find element called "button" and store in variable
+    var button = document.getElementById('button');
+
+    // Variable for storing the event type name
+    var eventName;
+
+    // Assign an event type name
+    eventName = 'click';
+    eventName = 'dblclick';
+    eventName = 'mousedown';
+    eventName = 'mouseup';
+
+    // Add an Event Listener using named function
+    button.addEventListener(eventName, runEvent);
+
+    // Find element called "button" and store in variable
+    var box = document.getElementById('box');
+
+
+    // Add event listeners
+    box.addEventListener('mouseenter', runEvent);
+    box.addEventListener('mouseleave', runEvent);
+    box.addEventListener('mouseover', runEvent);
+    box.addEventListener('mouseout', runEvent);
+
+    box.addEventListener('mousemove', runEvent);
+
+    // The mouseover/mouseout event triggers when the mouse pointer enters/leaves the div element, or its child elements.
+    // The mouseenter/mouseleave event is only triggered when the mouse pointer enters/leaves just the div element.
+    // The mousemove event triggers every time the mouse pointer is moved over the div element.
+
+    var itemInput = document.querySelector('input[type="text"]');
+    var select = document.querySelector('select');
+    var form = document.querySelector('form');
+
+    //itemInput.addEventListener('keydown', runEvent);
+    //itemInput.addEventListener('keyup', runEvent);
+    //itemInput.addEventListener('keypress', runEvent);
+
+    //itemInput.addEventListener('focus', runEvent);        // Gain focus
+    //itemInput.addEventListener('blur', runEvent);         // Lose focus
+
+    //itemInput.addEventListener('cut', runEvent);
+    //itemInput.addEventListener('paste', runEvent);
+
+    //itemInput.addEventListener('input', runEvent); // Includes cut, paste, key-presses, change
+    //itemInput.addEventListener('change', runEvent);
+
+    // The change event is fired for <input>, <select>, and <textarea> elements when an alteration to the element's 
+    // value is committed by the user. Unlike the input event, the change event is not necessarily fired for each 
+    // alteration to an element's value.
+
+    //select.addEventListener('change', runEvent);
+
+    form.addEventListener('submit', runEvent);
+
+    function runEvent(e)
+    {
+        e.preventDefault();
+
+        console.log('Event Type: ' + e.type);
+
+        //alert('Form Submitted');
+        
+        //console.log(e.target.value);
+
+        //document.getElementById('output').innerHTML = '<h3>' + e.target.value + '</h3>';
+
+        //output.innerHTML  = '<h3>Mouse X: ' + e.offsetX + '</h3>';
+        //output.innerHTML += '<h3>Mouse Y: ' + e.offsetY + '</h3>';
+
+        //box.style.backgroundColor = "rgb(" + e.offsetX + ", " + e.offsetY + ", 0)";
+    }
+*/
+
+
+
+
+
+
+
+
+
